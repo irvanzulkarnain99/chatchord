@@ -1,5 +1,6 @@
 const path = require('path');
 const http = require('http');
+const mysql = require('mysql');
 const express = require('express');
 const socketio = require('socket.io');
 const formatMessage = require('./utils/messages');
@@ -13,7 +14,6 @@ const {
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
-const mysql = require('mysql');
 
 // Mysql config
 var mysqlConnection = mysql.createConnection({
